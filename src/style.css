@@ -1,0 +1,87 @@
+:root {
+  --text: #2f2a36;
+  --text-h: #141019;
+  --bg: #f7f4f0;
+  --surface: #fff;
+  --border: #d7d0c7;
+  --accent: #6f5bd7;
+  --accent-bg: rgba(111, 91, 215, 0.12);
+  --mine-1: #0000ff;
+  --mine-2: #008000;
+  --mine-3: #ff0000;
+  --mine-4: #000080;
+  --mine-5: #800000;
+  --mine-6: #008080;
+  --mine-7: #000000;
+  --mine-8: #808080;
+  --cell-hidden-bg: #c0c0c0;
+  --cell-hidden-border: #ddd;
+  --cell-revealed-bg: #e0e0e0;
+  --cell-revealed-border: #bbb;
+  --cell-mine-bg: #ff4444;
+  --board-border: #999;
+  --status-bg: #c0c0c0;
+  --status-border: #ddd;
+  --status-counter-text: #ff0000;
+  --status-counter-bg: #000;
+  --status-counter-border: #999;
+  --status-label: #fff;
+
+  font: 16px/1.45 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #d9d4df;
+    --text-h: #f7f4fb;
+    --bg: #17141c;
+    --surface: #221e29;
+    --border: #3b3447;
+    --accent: #a99cff;
+    --accent-bg: rgba(169, 156, 255, 0.16);
+    --mine-1: #7aa2ff;
+    --mine-2: #74c476;
+    --mine-3: #ff7b72;
+    --mine-4: #9aa7ff;
+    --mine-5: #ff9b9b;
+    --mine-6: #70d7d7;
+    --mine-7: #f7f4fb;
+    --mine-8: #b8b5bf;
+    --cell-hidden-bg: #4b4652;
+    --cell-hidden-border: #6a6373;
+    --cell-revealed-bg: #2f2a36;
+    --cell-revealed-border: #4a4352;
+    --cell-mine-bg: #9f2f3f;
+    --board-border: #6a6373;
+    --status-bg: #4b4652;
+    --status-border: #6a6373;
+    --status-counter-text: #ff7b72;
+    --status-counter-bg: #08070a;
+    --status-counter-border: #6a6373;
+    --status-label: #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
