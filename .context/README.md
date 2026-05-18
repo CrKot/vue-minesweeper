@@ -43,4 +43,8 @@ npm test
 npm run build
 ```
 
-Проект не является git-репозиторием, поэтому `git diff` и `git status` здесь не помогут.
+GitHub remote:
+
+```text
+git@github.com:CrKot/vue-minesweeper.git
+```
