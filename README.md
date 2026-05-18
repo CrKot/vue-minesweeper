@@ -60,6 +60,16 @@ npm run build
 
 Скрипт запускает проверку TypeScript через `vue-tsc` и затем production-сборку Vite.
 
+## CI
+
+В проекте настроен GitHub Actions workflow:
+
+```text
+.github/workflows/ci.yml
+```
+
+Он запускает `npm ci`, `npm test` и `npm run build` на каждый push и pull request в `main`.
+
 ## Структура проекта
 
 ```text

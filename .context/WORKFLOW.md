@@ -31,6 +31,18 @@ npm run build
 
 `npm run build` включает `vue-tsc -b`, поэтому ловит ошибки типов.
 
+## CI
+
+GitHub Actions workflow находится в `.github/workflows/ci.yml`.
+
+Он запускается на `push` и `pull_request` в `main` и выполняет:
+
+```bash
+npm ci
+npm test
+npm run build
+```
+
 ## Важное про репозиторий
 
 Проект сейчас не является git-репозиторием.
