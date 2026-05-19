@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { defineComponent } from 'vue'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { useMinesweeper } from './useMinesweeper'
-import { DIFFICULTY_CONFIG } from '@/types/game'
+import { useMinesweeper } from '@/composables/useMinesweeper'
+import { DIFFICULTY_CONFIG } from '@/types'
 
 const FIRST_ROW = 0
 const FIRST_COL = 0

@@ -30,10 +30,12 @@
 
 Главные файлы:
 
-- `src/composables/useMinesweeper.ts` — игровая логика.
-- `src/components/GameBoard.vue` — построение сетки.
-- `src/components/Cell.vue` — отдельная ячейка.
-- `src/types/game.ts` — типы и уровни сложности.
+- `src/composables/useMinesweeper/useMinesweeper.ts` — игровая логика.
+- `src/components/GameBoard/GameBoard.vue` — построение сетки.
+- `src/components/Cell/Cell.vue` — отдельная ячейка.
+- `src/types/game.ts` — интерфейсы и константы; публичный импорт — `@/types`.
+
+Импорты: `@/components`, `@/composables`, `import type` из `@/types`.
 
 Команды:
 

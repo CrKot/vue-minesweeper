@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import GameControls from './GameControls.vue'
+import GameControls from '@/components/GameControls'
 
 describe('GameControls', () => {
   it('marks the current difficulty as active', () => {

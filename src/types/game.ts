@@ -1,4 +1,4 @@
-export type CellState = {
+export interface CellState {
   isMine: boolean
   isRevealed: boolean
   isFlagged: boolean
@@ -9,7 +9,7 @@ export type GameStatus = 'idle' | 'playing' | 'won' | 'lost'
 
 export type Difficulty = 'easy' | 'medium' | 'hard'
 
-export type GameConfig = {
+export interface GameConfig {
   rows: number
   cols: number
   mines: number

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import GameBoard from './GameBoard.vue'
-import type { CellState } from '@/types/game'
+import GameBoard from '@/components/GameBoard'
+import type { CellState } from '@/types'
 
 const BOARD_ROWS = 2
 const BOARD_COLS = 3

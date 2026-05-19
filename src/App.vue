@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useMinesweeper } from "./composables/useMinesweeper";
-import GameBoard from "./components/GameBoard.vue";
-import GameControls from "./components/GameControls.vue";
-import GameStatus from "./components/GameStatus.vue";
+import { useMinesweeper } from '@/composables'
+import { GameBoard, GameControls, GameStatus } from '@/components'
 
 const {
   board,

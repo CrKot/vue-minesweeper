@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GameStatus } from '@/types/game'
+import type { GameStatus } from '@/types'
 
 const props = defineProps<{
   status: GameStatus

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import Cell from './Cell.vue'
-import type { CellState } from '@/types/game'
+import Cell from '@/components/Cell'
+import type { CellState } from '@/types'
 
 const CELL_POSITION = {
   ROW: 2,

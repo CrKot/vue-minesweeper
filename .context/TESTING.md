@@ -29,7 +29,9 @@ npm run build
 
 ## Текущие тесты
 
-### `src/components/Cell.spec.ts`
+Spec-файлы лежат рядом с кодом в папке модуля. Компоненты в тестах импортируются через `@/components/<Name>`, composable — через `@/composables/useMinesweeper`.
+
+### `src/components/Cell/Cell.spec.ts`
 
 Проверяет:
 
@@ -39,7 +41,7 @@ npm run build
 - accessibility attributes;
 - открытая клетка с соседними минами показывает число.
 
-### `src/components/GameBoard.spec.ts`
+### `src/components/GameBoard/GameBoard.spec.ts`
 
 Проверяет:
 
@@ -47,7 +49,7 @@ npm run build
 - CSS grid обновляет количество колонок при смене ширины board;
 - событие из `Cell` пробрасывается наружу с координатами.
 
-### `src/components/GameControls.spec.ts`
+### `src/components/GameControls/GameControls.spec.ts`
 
 Проверяет:
 
@@ -55,14 +57,14 @@ npm run build
 - событие смены сложности;
 - событие reset.
 
-### `src/components/GameStatus.spec.ts`
+### `src/components/GameStatus/GameStatus.spec.ts`
 
 Проверяет:
 
 - отображение флагов, времени и emoji статуса;
 - обновление emoji и accessibility label при смене статуса.
 
-### `src/composables/useMinesweeper.spec.ts`
+### `src/composables/useMinesweeper/useMinesweeper.spec.ts`
 
 Проверяет:
 
@@ -79,8 +81,9 @@ npm run build
 
 При новых изменениях:
 
-- Изменение логики `useMinesweeper` -> добавлять тест в `useMinesweeper.spec.ts`.
-- Изменение рендера или событий компонента -> добавлять spec рядом с компонентом.
+- Изменение логики `useMinesweeper` -> добавлять тест в `src/composables/useMinesweeper/useMinesweeper.spec.ts`.
+- Изменение рендера или событий компонента -> добавлять spec в папку компонента (`<Name>/<Name>.spec.ts`).
+- Новый компонент -> папка `src/components/<Name>/` с `<Name>.vue`, `index.ts` и при необходимости spec; добавить реэкспорт в `src/components/index.ts`.
 - Изменение уровней сложности -> проверять размеры и счетчик мин.
 - Изменение таймера -> использовать fake timers.
 

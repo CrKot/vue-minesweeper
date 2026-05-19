@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { CellState } from '@/types/game'
-import Cell from './Cell.vue'
+import type { CellState } from '@/types'
+import Cell from '@/components/Cell'
 
 const DEFAULT_COLUMN_COUNT = 0
 const CELL_SIZE_PX = 30

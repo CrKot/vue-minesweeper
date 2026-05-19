@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import GameStatus from './GameStatus.vue'
+import GameStatus from '@/components/GameStatus'
 
 describe('GameStatus', () => {
   it('renders flags, time and current status emoji', () => {

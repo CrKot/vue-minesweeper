@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { CellState } from '@/types/game'
+import type { CellState } from '@/types'
 
 const MIN_NUMBERED_NEIGHBORS = 0
 

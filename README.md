@@ -78,28 +78,37 @@ src/
 ├── main.ts
 ├── style.css
 ├── components/
-│   ├── Cell.vue
-│   ├── Cell.spec.ts
-│   ├── GameBoard.vue
-│   ├── GameBoard.spec.ts
-│   ├── GameControls.vue
-│   ├── GameControls.spec.ts
-│   └── GameStatus.vue
+│   ├── index.ts
+│   ├── Cell/
+│   ├── GameBoard/
+│   ├── GameControls/
+│   └── GameStatus/
 ├── composables/
-│   ├── useMinesweeper.ts
-│   └── useMinesweeper.spec.ts
+│   ├── index.ts
+│   └── useMinesweeper/
 └── types/
-    └── game.ts
+    ├── game.ts
+    └── index.ts
 ```
+
+В каждой папке компонента или composable: реализация, spec-тесты (если есть) и `index.ts` для реэкспорта.
 
 ## Где что находится
 
-- `src/composables/useMinesweeper.ts` — основная игровая логика.
-- `src/types/game.ts` — типы, уровни сложности и размеры поля.
-- `src/components/GameBoard.vue` — построение сетки ячеек.
-- `src/components/Cell.vue` — отображение и события отдельной ячейки.
-- `src/components/GameControls.vue` — выбор сложности и новая игра.
-- `src/components/GameStatus.vue` — таймер, флаги и статус игры.
+- `src/composables/useMinesweeper/useMinesweeper.ts` — основная игровая логика.
+- `src/types/game.ts` — интерфейсы, union-типы и константы; импорт через `@/types`.
+- `src/components/GameBoard/GameBoard.vue` — построение сетки ячеек.
+- `src/components/Cell/Cell.vue` — отображение и события отдельной ячейки.
+- `src/components/GameControls/GameControls.vue` — выбор сложности и новая игра.
+- `src/components/GameStatus/GameStatus.vue` — таймер, флаги и статус игры.
+
+Пример импортов:
+
+```typescript
+import { GameBoard, GameControls, GameStatus } from '@/components'
+import { useMinesweeper } from '@/composables'
+import type { CellState } from '@/types'
+```
 
 ## Уровни сложности
 

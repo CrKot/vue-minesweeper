@@ -1,6 +1,7 @@
-import { ref, computed, onUnmounted, type Ref } from 'vue'
-import type { CellState, GameStatus, Difficulty, GameConfig } from '@/types/game'
-import { DIFFICULTY_CONFIG } from '@/types/game'
+import { ref, computed, onUnmounted } from 'vue'
+import type { Ref } from 'vue'
+import type { CellState, GameStatus, Difficulty, GameConfig } from '@/types'
+import { DIFFICULTY_CONFIG } from '@/types'
 
 const DEFAULT_NEIGHBOR_MINES = 0
 const INITIAL_TIME_SECONDS = 0

@@ -23,23 +23,49 @@ src/
 ├── main.ts
 ├── style.css
 ├── components/
-│   ├── Cell.vue
-│   ├── Cell.spec.ts
-│   ├── GameBoard.vue
-│   ├── GameBoard.spec.ts
-│   ├── GameControls.vue
-│   ├── GameControls.spec.ts
-│   └── GameStatus.vue
+│   ├── index.ts
+│   ├── Cell/
+│   │   ├── Cell.vue
+│   │   ├── Cell.spec.ts
+│   │   └── index.ts
+│   ├── GameBoard/
+│   │   ├── GameBoard.vue
+│   │   ├── GameBoard.spec.ts
+│   │   └── index.ts
+│   ├── GameControls/
+│   │   ├── GameControls.vue
+│   │   ├── GameControls.spec.ts
+│   │   └── index.ts
+│   └── GameStatus/
+│       ├── GameStatus.vue
+│       ├── GameStatus.spec.ts
+│       └── index.ts
 ├── composables/
-│   ├── useMinesweeper.ts
-│   └── useMinesweeper.spec.ts
+│   ├── index.ts
+│   └── useMinesweeper/
+│       ├── useMinesweeper.ts
+│       ├── useMinesweeper.spec.ts
+│       └── index.ts
 └── types/
-    └── game.ts
+    ├── game.ts
+    └── index.ts
+```
+
+Каждый компонент и composable лежит в своей папке; `index.ts` реэкспортирует публичный API. Импорты — через алиас `@/`:
+
+```typescript
+import { GameBoard, GameControls, GameStatus } from '@/components'
+import { useMinesweeper } from '@/composables'
+import type { CellState } from '@/types'
+import { DIFFICULTY_CONFIG } from '@/types'
 ```
 
 ## Ключевые зоны
 
-### `src/types/game.ts`
+### `src/types/`
+
+- `game.ts` — интерфейсы, union-типы и константы.
+- `index.ts` — barrel: `export type { ... }` и `export { GAME_BOARD, DIFFICULTY_CONFIG }`.
 
 Содержит типы и настройки:
 
@@ -58,7 +84,7 @@ src/
 | `medium` | 16x16 | 40 |
 | `hard` | 16x30 | 99 |
 
-### `src/composables/useMinesweeper.ts`
+### `src/composables/useMinesweeper/useMinesweeper.ts`
 
 Основная логика:
 
@@ -80,7 +106,7 @@ src/
 - При проигрыше открываются все мины.
 - Таймер очищается при reset, win, lost и unmount.
 
-### `src/components/GameBoard.vue`
+### `src/components/GameBoard/GameBoard.vue`
 
 Отвечает за визуальную сетку:
 
@@ -90,7 +116,7 @@ src/
 - пробрасывает события `reveal` и `flag` наверх;
 - содержит `.board-wrap` с горизонтальным скроллом для широкого поля.
 
-### `src/components/Cell.vue`
+### `src/components/Cell/Cell.vue`
 
 Отвечает за одну клетку:
 
@@ -104,11 +130,11 @@ src/
 - F -> `flag`.
 - Есть `role="gridcell"`, `tabindex` и `aria-label`.
 
-### `src/components/GameControls.vue`
+### `src/components/GameControls/GameControls.vue`
 
 Кнопки сложности и новая игра.
 
-### `src/components/GameStatus.vue`
+### `src/components/GameStatus/GameStatus.vue`
 
 Отображает счетчик мин/флагов, emoji статуса и таймер.
 
